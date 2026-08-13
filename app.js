@@ -195,7 +195,7 @@ function renderCard(item, idx) {
     body.appendChild(videoBox);
 
     let timerSeconds = item.rest;
-    if (!timerSeconds && item.slot === "warmup") {
+    if (!timerSeconds) {
       timerSeconds = parseDurationToSeconds(item.reps);
     }
 
