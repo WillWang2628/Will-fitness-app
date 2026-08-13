@@ -188,7 +188,7 @@ function renderCard(item, idx) {
     videoBox.className = "video-box";
     const ytId = extractYouTubeId(item.video);
     if (ytId) {
-      videoBox.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&mute=1&playsinline=1&rel=0" title="示範影片" allow="autoplay; encrypted-media" frameborder="0"></iframe>`;
+      videoBox.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1&playsinline=1&rel=0" title="示範影片" allow="autoplay; encrypted-media" frameborder="0"></iframe>`;
     } else {
       videoBox.innerHTML = `<div class="video-placeholder">尚無影片<br><span>之後在 Sheet 補上連結會自動出現</span></div>`;
     }
