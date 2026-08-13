@@ -1,6 +1,6 @@
 {
-  "name": "上半身訓練菜單",
-  "short_name": "訓練菜單",
+  "name": "Will's健身訓練菜單",
+  "short_name": "Will's健身",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
