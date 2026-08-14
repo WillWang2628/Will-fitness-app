@@ -188,7 +188,20 @@ function renderCard(item, idx) {
     videoBox.className = "video-box";
     const ytId = extractYouTubeId(item.video);
     if (ytId) {
-      videoBox.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1&playsinline=1&rel=0" title="示範影片" allow="autoplay; encrypted-media" frameborder="0"></iframe>`;
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1&playsinline=1&rel=0`;
+      iframe.title = "示範影片";
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.frameBorder = "0";
+      videoBox.appendChild(iframe);
+    } else if (item.video) {
+      const video = document.createElement("video");
+      video.src = item.video;
+      video.controls = true;
+      video.autoplay = true;
+      video.muted = true;
+      video.playsInline = true;
+      videoBox.appendChild(video);
     } else {
       videoBox.innerHTML = `<div class="video-placeholder">尚無影片<br><span>之後在 Sheet 補上連結會自動出現</span></div>`;
     }
